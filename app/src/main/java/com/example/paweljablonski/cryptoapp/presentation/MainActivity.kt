@@ -8,10 +8,9 @@ import androidx.compose.material.Surface
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.paweljablonski.cryptoapp.R
 import com.example.paweljablonski.cryptoapp.presentation.coin_detail.CoinDetailScreen
 import com.example.paweljablonski.cryptoapp.presentation.coin_list.CoinListScreen
-import com.example.paweljablonski.cryptoapp.presentation.ui.theme.CryptoAppTheme
+import com.example.paweljablonski.cryptoapp.presentation.ui.theme.cryptoAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CryptoAppTheme {
+            cryptoAppTheme {
                 Surface(color = MaterialTheme.colors.background) {
                     val navController = rememberNavController()
                     NavHost(
