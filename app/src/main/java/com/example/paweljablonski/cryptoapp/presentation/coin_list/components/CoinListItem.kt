@@ -24,30 +24,26 @@ import org.w3c.dom.Text
 fun CoinListItem(
     coin: Coin,
     onItemClick: (Coin) -> Unit
-){
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .clickable { onItemClick(coin) }
             .padding(20.dp),
-
         horizontalArrangement = Arrangement.SpaceBetween
-    ){
+    ) {
         Text(
-            text = "${coin.rank}. ${coin.name}. ${coin.symbol}",
+            text = "${coin.rank}. ${coin.name} (${coin.symbol})",
             style = MaterialTheme.typography.body1,
             overflow = TextOverflow.Ellipsis
         )
         Text(
-            text = if(coin.is_active) "active" else "inactive",
-            color = if(coin.is_active) Color.Green else Color.Red,
+            text = if(coin.isActive) "active" else "inactive",
+            color = if(coin.isActive) Color.Green else Color.Red,
             fontStyle = FontStyle.Italic,
             textAlign = TextAlign.End,
             style = MaterialTheme.typography.body2,
             modifier = Modifier.align(CenterVertically)
-
         )
-
     }
-
 }
