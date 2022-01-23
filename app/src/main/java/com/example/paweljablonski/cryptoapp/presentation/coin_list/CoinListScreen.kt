@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -23,11 +24,11 @@ import com.example.paweljablonski.cryptoapp.presentation.coin_list.components.Co
 fun CoinListScreen(
     navController: NavController,
     viewModel: CoinListViewModel = hiltViewModel()
-){
+) {
     val state = viewModel.state.value
-    Box(modifier = Modifier.fillMaxSize()){
-        LazyColumn(modifier = Modifier.fillMaxSize()){
-            items(state.coins){ coin ->
+    Box(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            items(state.coins) { coin ->
                 CoinListItem(
                     coin = coin,
                     onItemClick = {
@@ -36,8 +37,7 @@ fun CoinListScreen(
                 )
             }
         }
-
-        if(state.error.isNotBlank()){
+        if(state.error.isNotBlank()) {
             Text(
                 text = state.error,
                 color = MaterialTheme.colors.error,
@@ -48,8 +48,7 @@ fun CoinListScreen(
                     .align(Alignment.Center)
             )
         }
-
-        if(state.isLoading){
+        if(state.isLoading) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
     }

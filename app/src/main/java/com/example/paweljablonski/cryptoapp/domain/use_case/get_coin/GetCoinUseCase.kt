@@ -4,7 +4,6 @@ import com.example.paweljablonski.cryptoapp.common.Resource
 import com.example.paweljablonski.cryptoapp.data.remote.dto.toCoinDetail
 import com.example.paweljablonski.cryptoapp.domain.model.Coin
 import com.example.paweljablonski.cryptoapp.domain.model.CoinDetail
-import com.example.paweljablonski.cryptoapp.domain.model.toCoin
 import com.example.paweljablonski.cryptoapp.domain.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
